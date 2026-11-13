@@ -32,9 +32,18 @@ document.getElementById("n").textContent=P.length;
 document.getElementById("mn").textContent=rp(Math.min(...P.map(x=>x.p)));
 const tabs=document.getElementById("tabs"),grid=document.getElementById("grid");
 let cur="all";
+
+function mix(list){
+ const g={};
+ list.forEach(x=>(g[x.c]=g[x.c]||[]).push(x));
+ const q=Object.values(g),out=[];
+ while(q.some(a=>a.length))q.forEach(a=>{if(a.length)out.push(a.shift())});
+ return out;
+}
+
 function draw(){
  tabs.innerHTML=Object.keys(C).map(k=>`<button aria-pressed="${k===cur}" data-k="${k}">${C[k]}</button>`).join("");
- grid.innerHTML=P.filter(x=>cur==="all"||x.c===cur).map(x=>`<article class="card"><div class="im${x.w?" wb":""}"><img loading="lazy" src="${I[x.i]}" alt="${x.n}"></div><div class="bd"><h3>${x.n}</h3><small>${x.d||C[x.c]}</small><div class="price">${rp(x.p)}${x.u?" / "+x.u:""}</div><a class="btn" target="_blank" rel="noopener" href="${wa("Halo dQueen Florist, saya tertarik dengan "+x.n+" ("+rp(x.p)+"). Apakah masih tersedia?")}">Pesan sekarang</a></div></article>`).join("");
+ grid.innerHTML=(cur==="all"?mix(P):P.filter(x=>x.c===cur)).map(x=>`<article class="card"><div class="im${x.w?" wb":""}"><img loading="lazy" src="${I[x.i]}" alt="${x.n}"></div><div class="bd"><h3>${x.n}</h3><small>${x.d||C[x.c]}</small><div class="price">${rp(x.p)}${x.u?" / "+x.u:""}</div><a class="btn" target="_blank" rel="noopener" href="${wa("Halo dQueen Florist, saya tertarik dengan "+x.n+" ("+rp(x.p)+"). Apakah masih tersedia?")}">Pesan sekarang</a></div></article>`).join("");
 }
 tabs.addEventListener("click",e=>{const b=e.target.closest("button");if(b){cur=b.dataset.k;draw()}});
 draw();

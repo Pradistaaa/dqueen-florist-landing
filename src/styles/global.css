@@ -19,7 +19,7 @@ h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;l
 .top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
 .logo{display:inline-flex;align-items:center;gap:.65rem;font:600 1.9rem "Cormorant Garamond",serif;text-decoration:none;letter-spacing:.02em}
 .logo em{color:var(--gold);font-style:italic}
-.lg{display:block;height:48px;aspect-ratio:0.8197;background:url(/public/images/logo.png) center/contain no-repeat}
+.lg{display:block;height:48px;aspect-ratio:0.8197;background:url(/images/logo.png) center/contain no-repeat}
 .fl{display:flex;justify-content:center;align-items:center;gap:.6rem;margin-bottom:.6rem;color:var(--onw);font:600 1.5rem "Cormorant Garamond",serif}
 .fl em{color:var(--gold)}
 .fl .lg{height:40px}
@@ -94,7 +94,7 @@ ol.steps span{color:var(--mut);font-size:.95rem}
 .ph a.big b{font:600 1.9rem "Cormorant Garamond",serif}
 .ph .row{display:flex;gap:.6rem;flex-wrap:wrap}
 footer{background:var(--wine2);color:var(--onwm);text-align:center;padding:26px 24px 88px;font-size:.88rem}
-.site{position:relative;overflow:hidden;min-height:460px;display:flex;align-items:center;background:#140509 url(/public/images/site-bg.jpg) right center/auto 100% no-repeat;color:var(--onw);padding:96px 0}
+.site{position:relative;overflow:hidden;min-height:460px;display:flex;align-items:center;background:#140509 url(/images/site-bg.jpg) right center/auto 100% no-repeat;color:var(--onw);padding:96px 0}
 .site .wrap{position:relative;z-index:2;width:100%}
 .site .in{max-width:30rem}
 .site h2{font-size:clamp(2.1rem,4vw,3.2rem);margin-bottom:.9rem}

@@ -22,6 +22,22 @@ const { title, description } = Astro.props;
       gtag('config', 'AW-18577606145');
     </script>
 
+    <!-- Konversi: klik WhatsApp -->
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (/wa\.me|api\.whatsapp\.com|web\.whatsapp\.com|^whatsapp:/i.test(href)) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18577606145/y9T0CL24qbkdEIGMv5pF',
+            'value': 1.0,
+            'currency': 'IDR'
+          });
+        }
+      });
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />

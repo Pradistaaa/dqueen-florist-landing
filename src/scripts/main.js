@@ -23,7 +23,7 @@ const P=[
 {n:"Pita Dekorasi Besar",c:"dekor",p:350000,i:9,d:"90 × 200 cm"},
 {n:"Simbolis Kunci",c:"dekor",p:150000,u:"pcs",i:14},
 {n:"Simbolis Papan Cek",c:"dekor",p:50000,u:"pcs",i:15,d:"Ukuran A3"}];
-const wa=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t||"Halo dQueen Florist, saya ingin memesan bunga.");
+const wa=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t||"Halo, saya serius mau memesan produk dQueen Florist. Apakah bisa dibantu?");
 const rp=n=>"Rp "+n.toLocaleString("id-ID");
 document.querySelectorAll("a.wa").forEach(a=>{a.href=wa();a.target="_blank";a.rel="noopener"});
 {const a=document.getElementById("promoWa");a.href=wa("Halo dQueen Florist, saya ingin klaim promo Kejutan Disc 10% untuk semua produk.");a.target="_blank";a.rel="noopener"}

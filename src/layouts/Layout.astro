@@ -22,20 +22,18 @@ const { title, description } = Astro.props;
       gtag('config', 'AW-18577606145');
     </script>
 
-    <!-- Konversi: klik WhatsApp -->
+        <!-- Konversi: klik WhatsApp -->
     <script is:inline>
       document.addEventListener('click', function (e) {
-        var a = e.target.closest && e.target.closest('a[href]');
-        if (!a) return;
-        var href = a.getAttribute('href') || '';
-        if (/wa\.me|api\.whatsapp\.com|web\.whatsapp\.com|^whatsapp:/i.test(href)) {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-18577606145/y9T0CL24qbkdEIGMv5pF',
-            'value': 1.0,
-            'currency': 'IDR'
-          });
-        }
-      });
+        var el = e.target.closest && e.target.closest('a.wa, #promoWa, a[href*="wa.me"], a[href*="whatsapp.com"]');
+        if (!el) return;
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18577606145/y9T0CL24qbkdEIGMv5pF',
+          'value': 1.0,
+          'currency': 'IDR',
+          'transport_type': 'beacon'
+        });
+      }, true);
     </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -55,4 +53,4 @@ const { title, description } = Astro.props;
   <body>
     <slot />
   </body>
-</html>
+</html> 
